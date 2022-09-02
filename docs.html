@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Desafío Bsale - Documentación</title>
+
+	<!-- CSS only -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+
+</head>
+<body>
+
+	<div class="container">
+
+		<h1>Desafío Bsale - Documentación</h1>
+
+		<!-- Categorías -->
+		<h2 class="text-primary">Category</h2>
+		<p>Listar categorías</p>
+
+		<h4 class="text-success">Estructura JSON</h4>
+		<p>Al realizar una petición HTTP, el servicio retornara un JSON con la siguiente estructura:</p>
+		<pre id="category_structure"></pre>
+		<ul>
+			<li><b>id</b>, identificador único de la categoría (int)</li>
+			<li><b>name</b>, nombre de la categoría (varchar)</li>
+		</ul>
+		<h4 class="text-success">GET Lista de Categorías</h4>
+		<ul><li>GET /backend/category.php retornara todas las categoría.</li></ul>
+		<pre id="category_get"></pre>(...)
+
+
+		<!-- Productos -->
+		<h2 class="text-primary">Product</h2>
+		<p>Listar productos</p>
+
+		<h4 class="text-success">Estructura JSON</h4>
+		<p>Al realizar una petición HTTP, el servicio retornara un JSON con la siguiente estructura:</p>
+		<pre id="product_structure"></pre>
+		<ul>
+			<li><b>id</b>, identificador único del producto (int)</li>
+			<li><b>name</b>, nombre del producto (varchar)</li>
+			<li><b>url_image</b>, URL de la imagen asociada al producto (varchar)</li>
+			<li><b>price</b>, precio de venta del producto (float)</li>
+			<li><b>discount</b>, porcentaje de descuento del producto (int)</li>
+			<li><b>category</b>, identificador de la categoría (int)</li>
+		</ul>
+		<h4 class="text-success">GET Lista de Productos</h4>
+		<ul><li>GET /backend/product.php retornara todos los productos.</li></ul>
+		<h6>Parámetros</h6>
+		<ul><li><b>category</b>, filtra por la categoría del producto.</li></ul>
+		<h6>Ejemplo</h6>
+		<ul><li>GET /backend/product.php?category=5</li></ul>
+
+
+		<pre id="product_get"></pre>(...)
+
+	</div>
+
+	<script type="text/javascript">
+		
+		//category_structure
+		var category_structure_data = {
+		    "id": "4",
+		    "name": "bebida"
+		}
+		document.getElementById("category_structure").innerHTML = JSON.stringify(category_structure_data, undefined, 2);
+
+		//category get
+		var category_get_data = [
+			{"id":"1","name":"bebida energetica"},
+			{"id":"2","name":"pisco"},
+			{"id":"3","name":"ron"},
+		]
+		document.getElementById("category_get").innerHTML = JSON.stringify(category_get_data, undefined, 2);
+
+
+		//product_structure
+		var product_structure_data = {
+		    "id":"14","name":"PISCO ESPIRITU DEL ELQUI 40\u00ba","url_image":"https:\/\/dojiw2m9tvv09.cloudfront.net\/11132\/product\/espiritu8936.jpg","price":"5990","discount":"20","category":"2"
+		}
+		document.getElementById("product_structure").innerHTML = JSON.stringify(product_structure_data, undefined, 2);
+
+		//category get
+		var product_get_data = [
+			{"id":"47","name":"Man\u00ed salado","url_image":"https:\/\/dojiw2m9tvv09.cloudfront.net\/11132\/product\/manisaladomp4415.jpg","price":"600","discount":"0","category":"5"},
+			{"id":"53","name":"Mani Sin Sal","url_image":"https:\/\/dojiw2m9tvv09.cloudfront.net\/11132\/product\/manisinsalmp6988.jpg","price":"500","discount":"0","category":"5"},
+			{"id":"54","name":"Papas Fritas Lisas Bolsa Grande","url_image":"https:\/\/dojiw2m9tvv09.cloudfront.net\/11132\/product\/papaslisasgrande7128.jpg","price":"1490","discount":"0","category":"5"}
+		]
+		document.getElementById("product_get").innerHTML = JSON.stringify(product_get_data, undefined, 2);
+
+	</script>
+
+</body>
+</html>

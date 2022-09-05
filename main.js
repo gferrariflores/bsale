@@ -1,7 +1,3 @@
-//const url = "http://localhost/bsale/backend/product.php"
-//const url_categories = "http://localhost/bsale/backend/category.php"
-//const url_products = "http://localhost/bsale/backend/product.php"
-
 const url_categories = window.location + "/backend/category.php"
 const url_products = window.location + "/backend/product.php"
 

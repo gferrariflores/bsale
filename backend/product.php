@@ -9,15 +9,6 @@ $dbConn =  connect($db);
  */
 if ($_SERVER['REQUEST_METHOD'] == 'GET')
 {
-  /*
-  $input = $_GET;
-  $limit = $input['limit'];
-  $fields = getParams($input);
-  var_dump($limit);
-  echo "<hr>";
-  var_dump($fields);
-  exit();
-  */
 
   if (isset($_GET['id']))
   {
@@ -49,28 +40,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET')
     exit();
   }
 }
-
-//Actualizar
-if ($_SERVER['REQUEST_METHOD'] == 'PUT')
-{
-    $input = $_GET;
-    $postId = $input['id'];
-    $fields = getParams($input);
-
-    $sql = "
-          UPDATE product
-          SET $fields
-          WHERE id='$postId'
-           ";
-
-    $statement = $dbConn->prepare($sql);
-    bindAllValues($statement, $input);
-
-    $statement->execute();
-    header("HTTP/1.1 200 OK");
-    exit();
-}
-
 
 //En caso de que ninguna de las opciones anteriores se haya ejecutado
 header("HTTP/1.1 400 Bad Request");

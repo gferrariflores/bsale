@@ -19,3 +19,6 @@ Repositorio del proyecto: https://github.com/gferrariflores/bsale
 
 # 5.- Mantenimiento y Contribuciones
 Dada la naturaleza del proyecto este no requiere mayor mantenimiento ni contribuciones.
+
+# 6.- Documentación
+https://giovanniferrari.cl/bsale/docs.html
